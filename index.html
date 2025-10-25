@@ -3,16 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todo Manager</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="description" content="A professional and user-friendly Todo Manager to organize your tasks efficiently." />
+  <meta name="keywords" content="Todo Manager, Task Organizer, Productivity" />
+  <meta name="author" content="SHIVAGIT12" />
+  <title>Todo Manager | Organize Your Tasks</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header>
+    <nav>
+      <h1>Todo Manager</h1>
+    </nav>
+  </header>
   <main class="todo-container">
-    <h1>Todo Manager</h1>
-    <input type="text" id="todo-input" placeholder="Add a new task...">
-    <button onclick="addTodo()">Add Task</button>
-    <ul id="todo-list"></ul>
+    <section class="todo-input-section">
+      <h2>Add a New Task</h2>
+      <input type="text" id="todo-input" placeholder="Add a new task..." aria-label="Task input">
+      <input type="date" id="todo-date" aria-label="Due date">
+      <button onclick="addTodo()" aria-label="Add task">Add Task</button>
+    </section>
+    <section class="todo-filters">
+      <h3>Filter Tasks</h3>
+      <button onclick="filterTasks('all')">All</button>
+      <button onclick="filterTasks('completed')">Completed</button>
+      <button onclick="filterTasks('pending')">Pending</button>
+    </section>
+    <section class="todo-list-section">
+      <h2>Your Tasks</h2>
+      <ul id="todo-list" aria-live="polite"></ul>
+    </section>
   </main>
-  <script src="js/todo.js"></script>
+  <footer>
+    <p>&copy; 2025 Todo Manager. All rights reserved.</p>
+  </footer>
+  <script src="todo.js"></script>
 </body>
 </html>
